@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->string('body');
+            $table->foreignId('post_id')->constrained('posts')->onDeleted('cascade');
+            $table->enum('status', ['draft', 'published'])->default('published');
             $table->timestamps();
         });
     }

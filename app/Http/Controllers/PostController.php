@@ -12,7 +12,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //variable to see all posts
+        $posts = Post::all();
+        dd($posts);
+        return view('posts.index', compact('posts'));
     }
 
     /**

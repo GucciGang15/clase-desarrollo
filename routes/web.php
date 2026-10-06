@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +21,5 @@ Route::get('/enlaces', function () {
 })->name('enlaces');
 
 Route::get('/Fligths', [FlightController::class, 'index'])->name('flights.index');
+
+Route::get('/Posts', [PostController::class, 'index'])->name('posts.index');
