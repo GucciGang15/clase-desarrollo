@@ -17,3 +17,5 @@ Route::get('/interfaz', function () {
 Route::get('/enlaces', function () {
     return view('enlaces');
 })->name('enlaces');
+
+Route::get('/Fligths', [FlightController::class, 'index'])->name('flights.index');
